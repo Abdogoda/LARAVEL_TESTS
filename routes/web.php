@@ -68,6 +68,15 @@ Route::get('/categories/{slug}', [CategoryController::class, 'show'])->name('cat
 
 
 
+// Route for testing purpose
+Route::get('/test', function () {
+    $title = 'Test Page';
+    $content = 'This is a test page.';
+    return view('test', compact('title', 'content'));
+});
+
+
+
 
 
 
