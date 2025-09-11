@@ -60,3 +60,70 @@ Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 Route::get('/posts/{slug}', [PostController::class, 'show'])->name('posts.show');
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 Route::get('/categories/{slug}', [CategoryController::class, 'show'])->name('categories.show');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Sample users data
+$users = [
+    [
+        'id' => 1,
+        'name' => 'Sia',
+        'age' => 25
+    ],
+    [
+        'id' => 2,
+        'name' => 'John',
+        'age' => 30
+    ]
+];
+
+// For testing purpose
+Route::get('/users', function () use ($users) {
+    return $users;
+});
+
+Route::get('/users/{id}', function ($id) use ($users) {
+    return $users[$id - 1] ?? abort(404);
+});
+
+Route::post('/users', function (Request $request) use ($users) {
+    $users[] = [
+        'id' => count($users) + 1,
+        'name' => $request->input('name'),
+        'age' => $request->input('age')
+    ];
+    return response($users[count($users) - 1], 201);
+});
+
+Route::put('/users/{id}', function (Request $request, $id) use ($users) {
+    if (!isset($users[$id - 1])) {
+        abort(404);
+    }
+    $users[$id - 1]['name'] = $request->input('name', $users[$id - 1]['name']);
+    $users[$id - 1]['age'] = $request->input('age', $users[$id - 1]['age']);
+    return $users[$id - 1];
+});
+
+Route::delete('/users/{id}', function ($id) use ($users) {
+    if (!isset($users[$id - 1])) {
+        abort(404);
+    }
+    unset($users[$id - 1]);
+    return 'User deleted successfully';
+});
