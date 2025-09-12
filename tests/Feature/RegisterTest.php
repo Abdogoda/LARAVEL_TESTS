@@ -2,9 +2,11 @@
 
 namespace Tests\Feature;
 
+use App\Mail\WelcomeEmail;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Facades\Mail;
 use Tests\TestCase;
 
 class RegisterTest extends TestCase
@@ -65,6 +67,8 @@ class RegisterTest extends TestCase
 
     public function test_user_can_register_with_valid_data(): void
     {
+        Mail::fake();
+
         $userData = [
             'name' => 'John Doe',
             'email' => 'john@example.com',
@@ -82,5 +86,9 @@ class RegisterTest extends TestCase
         ]);
         $this->assertAuthenticated();
         $this->assertEquals('John Doe', auth()->user()->name);
+
+        Mail::assertSent(WelcomeEmail::class, function ($mail) use ($userData) {
+            return $mail->hasTo($userData['email']);
+        });
     }
 }
