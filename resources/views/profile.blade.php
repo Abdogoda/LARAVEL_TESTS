@@ -82,10 +82,13 @@
                 </div>
                 @if(!auth()->user()->hasVerifiedEmail())
                     <div class="ml-4">
-                        <a href="{{ route('verification.notice') }}" 
-                           class="px-4 py-2 text-white text-sm font-medium rounded-md transition-colors duration-200" style="background-color: #30a520;" onmouseover="this.style.backgroundColor='#3cba24'" onmouseout="this.style.backgroundColor='#3ceb25'">
-                            Verify Email
-                        </a>
+                        <form action="{{ route('verification.send') }}" method="post">
+                            @csrf
+                            <button type="submit" 
+                                class="px-4 py-2 text-white text-sm font-medium rounded-md transition-colors duration-200" style="background-color: #30a520;" onmouseover="this.style.backgroundColor='#3cba24'" onmouseout="this.style.backgroundColor='#3ceb25'">
+                                Verify Email
+                            </button>
+                        </form>
                     </div>
                 @endif
             </div>
