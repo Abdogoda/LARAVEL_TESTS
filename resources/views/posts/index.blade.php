@@ -175,6 +175,24 @@
                             </div>
                         </div>
 
+                        <!-- Word Count and Reading Time -->
+                        <div class="flex items-center justify-between text-xs text-gray-500 group-hover:text-gray-400 transition-colors duration-200 mt-2">
+                            <div class="flex items-center space-x-4">
+                                <div class="flex items-center transform group-hover:scale-105 transition-transform duration-200">
+                                    <svg class="w-3 h-3 mr-1 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                    </svg>
+                                    <span>{{ word_count($post->content) }} words</span>
+                                </div>
+                                <div class="flex items-center transform group-hover:scale-105 transition-transform duration-200">
+                                    <svg class="w-3 h-3 mr-1 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span>{{ reading_time($post->content) }}</span>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Read more link -->
                         <div class="mt-4 pt-4 border-t border-white/10">
                             <a href="{{ route('posts.show', $post->slug) }}" class="inline-flex items-center text-cyan-400 hover:text-cyan-300 text-sm font-medium transform group-hover:translate-x-2 transition-all duration-200 group-hover:scale-105">
