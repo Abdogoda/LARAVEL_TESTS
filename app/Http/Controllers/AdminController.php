@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\User;
+use App\Notifications\PostApprovedNotification;
+use App\Notifications\PostRejectedNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -59,6 +61,8 @@ class AdminController extends Controller
             'published_at' => $post->published_at ?? now(),
         ]);
 
+        $post->user->notify(new PostApprovedNotification($post));
+
         return redirect()->route('admin.dashboard')
             ->with('message', 'Post approved successfully!');
     }
@@ -75,6 +79,8 @@ class AdminController extends Controller
             'reviewed_at' => now(),
             'review_notes' => $request->notes,
         ]);
+
+        $post->user->notify(new PostRejectedNotification($post));
 
         return redirect()->route('admin.dashboard')
             ->with('message', 'Post rejected with feedback.');
