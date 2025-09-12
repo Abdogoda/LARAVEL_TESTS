@@ -18,7 +18,7 @@
     @endif
     
     <!-- Stats Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
         <div class="bg-gray-800 border border-gray-700 rounded-lg shadow-lg p-6">
             <div class="flex items-center">
                 <div class="flex-shrink-0">
@@ -50,6 +50,44 @@
                         </dd>
                     </dl>
                 </div>
+            </div>
+        </div>
+
+        <div class="bg-gray-800 border border-gray-700 rounded-lg shadow-lg p-6">
+            <div class="flex flex-col gap-2">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        @if(auth()->user()->hasVerifiedEmail())
+                            <svg class="h-8 w-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        @else
+                            <svg class="h-8 w-8 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.5 0L4.232 18.5c-.77.833.192 2.5 1.732 2.5z" />
+                            </svg>
+                        @endif
+                    </div>
+                    <div class="ml-5 w-0 flex-1">
+                        <dl>
+                            <dt class="text-sm font-medium text-gray-400 truncate">Email Status</dt>
+                            <dd class="text-lg font-medium text-white">
+                                @if(auth()->user()->hasVerifiedEmail())
+                                    <span class="text-green-400">Verified</span>
+                                @else
+                                    <span class="text-red-400">Not Verified</span>
+                                @endif
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                @if(!auth()->user()->hasVerifiedEmail())
+                    <div class="ml-4">
+                        <a href="{{ route('verification.notice') }}" 
+                           class="px-4 py-2 text-white text-sm font-medium rounded-md transition-colors duration-200" style="background-color: #30a520;" onmouseover="this.style.backgroundColor='#3cba24'" onmouseout="this.style.backgroundColor='#3ceb25'">
+                            Verify Email
+                        </a>
+                    </div>
+                @endif
             </div>
         </div>
     </div>
