@@ -29,7 +29,7 @@
                 <div class="ml-5 w-0 flex-1">
                     <dl>
                         <dt class="text-sm font-medium text-gray-400 truncate">My Posts</dt>
-                        <dd class="text-lg font-medium text-white">{{ $userPosts->total() }}</dd>
+                        <dd class="text-lg font-medium text-white" title="my posts">{{ $userPosts->total() }}</dd>
                     </dl>
                 </div>
             </div>
@@ -45,9 +45,7 @@
                 <div class="ml-5 w-0 flex-1">
                     <dl>
                         <dt class="text-sm font-medium text-gray-400 truncate">Account Status</dt>
-                        <dd class="text-lg font-medium text-white">
-                            {{ auth()->user()->isAdmin() ? 'Admin' : 'User' }}
-                        </dd>
+                        <dd class="text-lg font-medium text-white" title="account status">{{ auth()->user()->isAdmin() ? 'Admin' : 'User' }}</dd>
                     </dl>
                 </div>
             </div>
@@ -72,9 +70,9 @@
                             <dt class="text-sm font-medium text-gray-400 truncate">Email Status</dt>
                             <dd class="text-lg font-medium text-white">
                                 @if(auth()->user()->hasVerifiedEmail())
-                                    <span class="text-green-400">Verified</span>
+                                    <span class="text-green-400" title="Email verification status">Verified</span>
                                 @else
-                                    <span class="text-red-400">Not Verified</span>
+                                    <span class="text-red-400" title="Email verification status">Not Verified</span>
                                 @endif
                             </dd>
                         </dl>
