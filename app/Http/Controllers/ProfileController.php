@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ChangePasswordRequest;
+use App\Http\Requests\UpdateProfileRequest;
 use App\Models\Post;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rule;
 
 class ProfileController extends Controller
 {
@@ -34,18 +34,9 @@ class ProfileController extends Controller
     ));
   }
 
-  public function update(Request $request)
+  public function update(UpdateProfileRequest $request)
   {
     $user = Auth::user();
-
-    $request->validate([
-      'name' => ['required', 'string', 'max:255'],
-      'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
-      'bio' => ['nullable', 'string', 'max:500'],
-      'location' => ['nullable', 'string', 'max:100'],
-      'website' => ['nullable', 'url', 'max:255'],
-      'avatar' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
-    ]);
 
     $updateData = $request->only(['name', 'email', 'bio', 'location', 'website']);
 
@@ -57,18 +48,17 @@ class ProfileController extends Controller
       $updateData['avatar'] = '/storage/avatars/' . $avatarName;
     }
 
+    if ($request->email !== $user->email) {
+      $updateData['email_verified_at'] = null;
+    }
+
     $user->update($updateData);
 
     return redirect()->route('profile.show')->with('success', 'Profile updated successfully!');
   }
 
-  public function updatePassword(Request $request)
+  public function updatePassword(ChangePasswordRequest $request)
   {
-    $request->validate([
-      'current_password' => ['required'],
-      'password' => ['required', 'min:8', 'confirmed'],
-    ]);
-
     $user = Auth::user();
 
     if (!Hash::check($request->current_password, $user->password)) {
