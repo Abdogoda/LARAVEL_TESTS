@@ -48,6 +48,11 @@ class AdminController extends Controller
 
     public function reviewPost(Post $post)
     {
+        if (!$post->isPending()) {
+            return redirect()->route('admin.dashboard')
+                ->with('error', 'Only pending posts can be reviewed.');
+        }
+
         return view('admin.review-post', compact('post'));
     }
 

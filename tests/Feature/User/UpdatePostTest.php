@@ -90,4 +90,33 @@ class UpdatePostTest extends TestCase
             'content' => $post->content
         ]);
     }
+
+    public function test_post_after_update_must_be_reviewed_first()
+    {
+        $user = $this->authenticate();
+        $post = Post::factory()->create(['user_id' => $user->id]);
+
+        // First visit the edit page to set the referrer
+        $this->get(route('posts.edit', $post));
+
+        $response = $this->put(route('posts.update', $post), [
+            'title' => 'Updated Title',
+            'category_id' => 1,
+            'content' => 'Updated content for the post.'
+        ]);
+
+        $post->refresh();
+        $response->assertRedirect(route('posts.show', $post->slug));
+        $this->assertDatabaseHas('posts', [
+            'id' => $post->id,
+            'title' => 'Updated Title',
+            'category_id' => 1,
+            'content' => 'Updated content for the post.',
+            'status' => 'pending', // Post should now require review
+            'reviewed_at' => null, // Post should be unpublished
+            'reviewed_by' => null
+        ]);
+
+        $this->get(route('posts.index'))->assertDontSee($post->title);
+    }
 }
