@@ -8,10 +8,7 @@
         </div>
         Title
     </label>
-    <input type="text" 
-           name="title" 
-           id="title" 
-           value="{{ old('title', $post->title ?? '') }}"
+    <input type="text" name="title" id="title" value="{{ old('title', $post->title ?? '') }}"
            placeholder="Enter post title..."
            class="block w-full bg-white/10 backdrop-blur-sm border text-white rounded-lg shadow-sm py-3 px-4 placeholder-gray-300 focus:ring-2 focus:ring-emerald-400/50 focus:border-emerald-400/50 hover:bg-white/15 transition-all duration-200 @error('title') border-red-400/50 @else border-white/20 @enderror">
     @error('title')
@@ -34,9 +31,7 @@
         </div>
         Category
     </label>
-    <select name="category_id" 
-            id="category_id"
-            class="block w-full bg-white/10 backdrop-blur-sm border text-white rounded-lg shadow-sm py-3 px-4 focus:ring-2 focus:ring-teal-400/50 focus:border-teal-400/50 hover:bg-white/15 transition-all duration-200 @error('category_id') border-red-400/50 @else border-white/20 @enderror">
+    <select name="category_id" id="category_id" class="block w-full bg-white/10 backdrop-blur-sm border text-white rounded-lg shadow-sm py-3 px-4 focus:ring-2 focus:ring-teal-400/50 focus:border-teal-400/50 hover:bg-white/15 transition-all duration-200 @error('category_id') border-red-400/50 @else border-white/20 @enderror">
         <option value="">Select a category...</option>
         @foreach($categories as $category)
             <option value="{{ $category->id }}" 
@@ -109,11 +104,7 @@
         </div>
         Content
     </label>
-    <textarea
-        name="content"
-        id="content"
-        rows="10"
-        placeholder="Write your post content here..."
+    <textarea name="content" id="content" rows="10" placeholder="Write your post content here..."
         class="block w-full bg-white/10 backdrop-blur-sm border text-white rounded-lg shadow-sm py-3 px-4 placeholder-gray-300 focus:ring-2 focus:ring-cyan-400/50 focus:border-cyan-400/50 hover:bg-white/15 transition-all duration-200 @error('content') border-red-400/50 @else border-white/20 @enderror"
     >{{ old('content', $post->content ?? '') }}</textarea>
     @error('content')
