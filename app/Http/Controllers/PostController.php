@@ -51,7 +51,7 @@ class PostController extends Controller
                 break;
         }
 
-        $posts = $query->paginate(12);
+        $posts = $query->paginate(6);
         $categories = Category::orderBy('name')->get();
 
         return view('posts.index', compact('posts', 'categories'));
