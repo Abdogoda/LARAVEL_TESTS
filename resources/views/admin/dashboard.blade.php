@@ -43,7 +43,7 @@
                 </div>
                 <div class="ml-4">
                     <p class="text-sm font-medium text-gray-400">Pending Review</p>
-                    <p class="text-2xl font-bold text-yellow-400">{{ $pendingPosts->total() }}</p>
+                    <p class="text-2xl font-bold text-yellow-400" title="Total posts pending review">{{ $pendingPosts->total() }}</p>
                 </div>
             </div>
         </div>
@@ -57,7 +57,7 @@
                 </div>
                 <div class="ml-4">
                     <p class="text-sm font-medium text-gray-400">Approved</p>
-                    <p class="text-2xl font-bold text-green-400">{{ $approvedPosts->count() }}</p>
+                    <p class="text-2xl font-bold text-green-400" title="Total posts approved">{{ $approvedPosts->count() }}</p>
                 </div>
             </div>
         </div>
@@ -71,7 +71,7 @@
                 </div>
                 <div class="ml-4">
                     <p class="text-sm font-medium text-gray-400">Rejected</p>
-                    <p class="text-2xl font-bold text-red-400">{{ $rejectedPosts->count() }}</p>
+                    <p class="text-2xl font-bold text-red-400" title="Total posts rejected">{{ $rejectedPosts->count() }}</p>
                 </div>
             </div>
         </div>
@@ -85,7 +85,7 @@
                 </div>
                 <div class="ml-4">
                     <p class="text-sm font-medium text-gray-400">Total Writers</p>
-                    <p class="text-2xl font-bold text-purple-400">{{ $totalWriters }}</p>
+                    <p class="text-2xl font-bold text-purple-400" title="Total writers">{{ $totalWriters }}</p>
                 </div>
             </div>
         </div>
