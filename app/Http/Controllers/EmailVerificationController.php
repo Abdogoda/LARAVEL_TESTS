@@ -8,11 +8,6 @@ use Illuminate\Http\Request;
 
 class EmailVerificationController extends Controller
 {
-    public function notice()
-    {
-        return view('auth.verify-email');
-    }
-
     public function verify(EmailVerificationRequest $request)
     {
         if ($request->user()->hasVerifiedEmail()) {
@@ -26,7 +21,7 @@ class EmailVerificationController extends Controller
         return redirect()->route('profile.show')->with('message', 'Email verified successfully!');
     }
 
-    public function resend(Request $request)
+    public function send(Request $request)
     {
         if ($request->user()->hasVerifiedEmail()) {
             return redirect()->route('profile.show')->with('message', 'Email already verified.');

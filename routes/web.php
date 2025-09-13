@@ -7,7 +7,6 @@ use App\Http\Controllers\EmailVerificationController;
 use App\Http\Controllers\PasswordResetController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -35,9 +34,8 @@ Route::middleware(['auth'])->group(function () {
 
     // Email verification routes
     Route::controller(EmailVerificationController::class)->group(function () {
-        Route::get('/email/verify', 'notice')->name('verification.notice');
         Route::get('/email/verify/{id}/{hash}', 'verify')->middleware(['signed'])->name('verification.verify');
-        Route::post('/email/verification-notification', 'resend')->middleware(['throttle:6,1'])->name('verification.send');
+        Route::post('/email/verification-notification', 'send')->middleware(['throttle:6,1'])->name('verification.send');
     });
 
     // Profile routes
