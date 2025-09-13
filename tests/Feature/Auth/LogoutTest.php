@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\Auth;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -9,7 +9,11 @@ use Tests\TestCase;
 
 class LogoutTest extends TestCase
 {
-    use RefreshDatabase;
+    public function setUp(): void
+    {
+        parent::setUp();
+
+    }
 
     public function test_user_cannot_logout_when_not_authenticated(): void
     {
@@ -21,9 +25,7 @@ class LogoutTest extends TestCase
 
     public function test_user_can_logout_when_authenticated(): void
     {
-        $user = User::factory()->create();
-
-        $this->actingAs($user);
+        $this->authenticate();
 
         $response = $this->post(route('logout'));
 

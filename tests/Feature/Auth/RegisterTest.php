@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\Auth;
 
 use App\Mail\WelcomeEmail;
 use App\Models\User;
@@ -11,7 +11,11 @@ use Tests\TestCase;
 
 class RegisterTest extends TestCase
 {
-    use RefreshDatabase;
+    public function setUp(): void
+    {
+        parent::setUp();
+
+    }
 
     public function test_register_form_display(): void
     {
@@ -26,6 +30,7 @@ class RegisterTest extends TestCase
             'name="password"',
             'name="password_confirmation"',
             '<button',
+            'a href="' . route('login') . '"',
             '</form>'
         ]);
     }
@@ -51,13 +56,9 @@ class RegisterTest extends TestCase
 
     public function test_user_cannot_register_with_non_unique_email(): void
     {
-        User::factory()->create([
-            'email' => 'existing@example.com',
-        ]);
-
         $response = $this->post(route('register'), [
             'name' => 'Existing User',
-            'email' => 'existing@example.com',
+            'email' => $this->createUser()->email,
             'password' => 'password123',
             'password_confirmation' => 'password123',
         ]);

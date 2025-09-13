@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\Auth;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -9,7 +9,12 @@ use Tests\TestCase;
 
 class LoginTest extends TestCase
 {
-    use RefreshDatabase;
+
+    public function setUp(): void
+    {
+        parent::setUp();
+
+    }
 
     public function test_user_can_access_login_page(): void
     {
@@ -21,7 +26,9 @@ class LoginTest extends TestCase
             '<form',
             'name="email"',
             'name="password"',
+            'a href="' . route('password.request') . '"',
             'type="submit"',
+            'a href="' . route('register') . '"',
             '</form>'
         ]);
     }
@@ -47,20 +54,17 @@ class LoginTest extends TestCase
 
     public function test_user_can_login_with_valid_credentials(): void
     {
-        $user = User::factory()->create([
-            'email' => 'user@example.com',
-            'password' => bcrypt('password123')
-        ]);
+        $user = $this->createUser();
 
         $response = $this->post(route('login'), [
-            'email' => 'user@example.com',
-            'password' => 'password123'
+            'email' => $user->email,
+            'password' => 'password'
         ]);
 
         $response->assertStatus(302);
         $response->assertRedirect(route('profile.show'));
         $this->assertAuthenticated();
         $this->assertAuthenticatedAs($user);
-        $this->assertEquals('user@example.com', auth()->user()->email);
+        $this->assertEquals(auth()->user()->email, $user->email);
     }
 }
