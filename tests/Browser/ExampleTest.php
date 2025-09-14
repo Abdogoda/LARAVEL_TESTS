@@ -18,8 +18,9 @@ class ExampleTest extends DuskTestCase
                 ->type('email', $user->email)
                 ->type('password', 'password')
                 ->press('Sign In')
-                ->assertPathIs('/profile')
+                ->refresh()
                 ->assertSee('Profile')
+                ->assertPathIs('/profile')
                 ->assertSee($user->name);
         });
     }

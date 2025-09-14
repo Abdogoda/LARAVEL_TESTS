@@ -22,6 +22,12 @@ jobs:
 
     - name: Install PHP dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+    
+    - name: Install Chrome binaries
+      run: php artisan dusk:chrome-driver --detect
+
+    - name: Start Chrome Driver
+      run: ./vendor/laravel/dusk/bin/chromedriver-win &
 
     - name: Install Node.js
       uses: actions/setup-node@v4
@@ -44,6 +50,12 @@ jobs:
       run: |
         mkdir -p database
         touch database/database.sqlite
+
+    - name: Run Laravel Server
+      run: php artisan serve --no-reload &
+
+    - name: Execute tests
+      run: php artisan pest:dusk
 
     - name: Run tests (Unit and Feature tests) via PHPUnit/Pest
       env:
