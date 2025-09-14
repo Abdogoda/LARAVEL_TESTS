@@ -55,7 +55,7 @@ jobs:
       run: php artisan serve --no-reload &
 
     - name: Execute tests
-      run: php artisan pest:dusk
+      run: php artisan dusk
 
     - name: Run tests (Unit and Feature tests) via PHPUnit/Pest
       env:
