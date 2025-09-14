@@ -50,6 +50,7 @@ jobs:
       run: |
         mkdir -p database
         touch database/database.sqlite
+        php artisan migrate --force
 
     - name: Run Laravel Server
       run: php artisan serve --no-reload &
