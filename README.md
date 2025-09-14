@@ -1,80 +1,191 @@
-# Laravel 12 Blog Management System
+# 🚀 Laravel 12 Blog Management System
 
-A comprehensive blog application built with Laravel 12, featuring modern design with Tailwind CSS, role-based authentication, content management system, and administrative review workflow.
+<div align="center">
 
-## 🚀 Features
+![Laravel](https://img.shields.io/badge/Laravel-12-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.2+-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.1.13-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Tests](https://img.shields.io/badge/Tests-90%2B%20Cases-22C55E?style=for-the-badge&logo=checkmarx&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-F59E0B?style=for-the-badge&logo=opensourceinitiative&logoColor=white)
 
-### 🔐 Authentication System
-- **User Registration** with profile information (bio, location, website, avatar)
-- **Login/Logout** functionality
-- **Password Reset** via email
-- **Role-based Access Control** (User/Admin roles)
-- **Profile Management** with personal information updates
+[![YouTube Tutorial](https://img.shields.io/badge/📺_YouTube-Laravel_Testing_Tutorial-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/playlist?list=YOUR_PLAYLIST_ID)
+[![GitHub](https://img.shields.io/badge/⭐_GitHub-Abdogoda-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Abdogoda)
 
-### 📝 Content Management
-- **Posts Management**: Create, read, update, delete posts with rich content
-- **Categories System**: Organize posts with custom categories and slugs
-- **Draft System**: Save posts as drafts before publishing
-- **Post Review Workflow**: Admin approval system for user posts
-- **Status Management**: Draft, Pending, Approved, Rejected post statuses
-- **Image Upload**: Featured images for posts
-- **SEO-friendly URLs**: Automatic slug generation from titles
+</div>
 
-### 👑 Admin Features
-- **Admin Dashboard**: Comprehensive overview of pending posts and system activity
-- **Post Review System**: Approve/reject user-submitted posts with review notes
-- **Category Management**: Create, edit, delete post categories
-- **User Role Management**: Admin and regular user roles
-- **Content Moderation**: Full control over published content
+<p align="center">
+  <strong>A comprehensive blog application built with Laravel 12</strong><br>
+  Featuring modern design, role-based authentication, content management, and extensive testing coverage.<br>
+  <em>Both a production-ready platform and educational resource for Laravel development.</em>
+</p>
+
+---
+
+## 📸 Screenshots
+
+> **Note**: Add screenshots of your application here to showcase the UI and features.
+
+<!-- 
+![Homepage](screenshots/homepage.png)
+![Admin Dashboard](screenshots/admin-dashboard.png)
+![Post Creation](screenshots/post-creation.png)
+-->
+
+## 📋 Table of Contents
+
+- [Screenshots](#-screenshots)
+- [Features](#-features)
+- [Technology Stack](#️-technology-stack)
+- [Requirements](#-requirements)
+- [Quick Start](#-quick-start)
+- [Default Users](#-default-users)
+- [Application Routes](#-application-routes)
+- [Usage Guide](#-usage-guide)
+- [Project Structure](#️-project-structure)
+- [Educational Testing Structure](#-educational-testing-structure-youtube-tutorial-series)
+- [Comprehensive Testing Framework](#-comprehensive-testing-framework)
+- [Security & Features](#-security--features)
+- [Customization](#-customization)
+- [Production Deployment](#-production-deployment)
+- [What's Included](#-whats-included)
+- [Contributing](#-contributing)
+- [Contact & Support](#-contact--support)
+- [License](#-license)
+
+## ✨ Features
+
+### 🔐 Authentication & Security
+- 📝 **User Registration** with comprehensive profile (bio, location, website, avatar)
+- 🚪 **Login/Logout** functionality with advanced form validation
+- 🔑 **Password Reset** via secure email token system
+- ✉️ **Email Verification** (implemented, ready for activation)
+- 👥 **Role-based Access Control** (User/Admin roles)
+- 👤 **Profile Management** with personal information updates
+- 🗑️ **User Soft Deletes** for data integrity and recovery
+- 📧 **Welcome Email** notifications for new registrations
+
+### � Content Management
+- 📖 **Posts Management** - Create, read, update, delete with rich content
+- 🏷️ **Categories System** - Organize posts with custom categories and slugs
+- 📝 **Draft System** - Save posts as drafts before publishing
+- ⏳ **Post Review Workflow** - Admin approval system for user submissions
+- 📊 **Status Management** - Draft, Pending, Approved, Rejected statuses
+- 🖼️ **Image Upload** - Featured images with storage management
+- 🔗 **SEO-friendly URLs** - Automatic slug generation with uniqueness
+- ⏰ **Reading Time Calculator** - Automatic reading time estimation
+- 📏 **Word Count Functions** - Built-in content analysis helpers
+- 🔔 **Post Notifications** - Email alerts for approval/rejection
+
+### 👑 Admin Panel
+- 📊 **Admin Dashboard** - Comprehensive overview of system activity
+- ✅ **Post Review System** - Approve/reject submissions with detailed notes
+- 🏷️ **Category Management** - Create, edit, delete content categories
+- 👥 **User Role Management** - Admin and regular user permissions
+- 🛡️ **Content Moderation** - Full control over published content
+- 📬 **Admin Notifications** - Real-time alerts for review actions
 
 ### 🎨 Modern UI/UX
-- **Responsive Design**: Works seamlessly on all device sizes
-- **Tailwind CSS**: Modern, utility-first styling framework
-- **Clean Layout**: Professional blog appearance with intuitive navigation
-- **Interactive Elements**: Hover effects and smooth transitions
+- 📱 **Responsive Design** - Seamless experience across all device sizes
+- 🎨 **Tailwind CSS v4.1.13** - Modern, utility-first styling framework
+- ✨ **Clean Layout** - Professional blog appearance with intuitive navigation
+- 🎭 **Interactive Elements** - Smooth hover effects and transitions
 
 ### 🔍 Content Discovery
-- **Search Functionality**: Search posts by title and content
-- **Category Filtering**: Filter posts by specific categories
-- **Sorting Options**: Sort by date (latest/oldest) and title
-- **Pagination**: Efficient browsing of large content collections
-- **Public/Private Access**: Guest users can view published posts, authenticated users manage content
+- 🔎 **Search Functionality** - Full-text search across titles and content
+- 🏷️ **Category Filtering** - Filter posts by specific categories
+- 📅 **Sorting Options** - Sort by date (latest/oldest) and title
+- 📄 **Pagination** - Efficient browsing of large content collections
+- 🌐 **Public/Private Access** - Guest viewing with authenticated content management
 
 ## 🛠️ Technology Stack
 
-- **Framework**: Laravel 12
-- **Database**: MySQL (configured for development)
-- **Frontend**: Tailwind CSS v4.1.13, Blade Templates
-- **Build Tool**: Vite
-- **Authentication**: Laravel's built-in system
-- **Email**: Laravel Mail (configurable providers)
-- **File Storage**: Laravel's storage system for image uploads
+<table>
+<tr>
+<td>
+
+**🚀 Backend**
+- 🔥 Laravel 12
+- 🐘 PHP 8.2+
+- 🗄️ MySQL/SQLite
+- 📧 Laravel Mail
+- 🔐 Built-in Auth
+
+</td>
+<td>
+
+**🎨 Frontend**
+- 💨 Tailwind CSS v4.1.13
+- 🌐 Blade Templates
+- ⚡ Vite v7.0.4
+- 📱 Responsive Design
+
+</td>
+<td>
+
+**🧪 Testing**
+- ✅ PHPUnit 11.5.3
+- 🐛 Pest PHP 3.8
+- 📊 90+ Test Cases
+- 🔄 CI/CD Ready
+
+</td>
+</tr>
+<tr>
+<td>
+
+**🔧 Development**
+- 🎯 Laravel Pint
+- 🐳 Laravel Sail
+- 📦 Composer
+- 🛠️ Custom Helpers
+
+</td>
+<td>
+
+**☁️ Storage**
+- 📁 Laravel Storage
+- 🖼️ Image Management
+- 📂 File Organization
+
+</td>
+<td>
+
+**🔔 Notifications**
+- 📧 Email System
+- 🔔 Real-time Alerts
+- 📬 Admin Notifications
+
+</td>
+</tr>
+</table>
 
 ## 📋 Requirements
 
-- PHP 8.2+
-- Composer
-- Node.js 18+
-- MySQL 5.7+/8.0+
-- Web server (Apache/Nginx)
+| Component | Version | Purpose |
+|-----------|---------|---------|
+| 🐘 **PHP** | 8.2+ | Backend Runtime |
+| 📦 **Composer** | Latest | Dependency Management |
+| 🟢 **Node.js** | 18+ | Asset Building |
+| 🗄️ **MySQL** | 5.7+/8.0+ | Database |
+| 🌐 **Web Server** | Apache/Nginx | HTTP Server |
 
 ## ⚡ Quick Start
 
-### 1. Clone and Install
+### 1️⃣ Clone and Install
 ```bash
-git clone <repository-url>
-cd laravel-blog
+git clone https://github.com/Abdogoda/LARAVEL_TESTS.git
+cd LARAVEL_TESTS
 composer install
 npm install
 ```
 
-### 2. Environment Setup
+### 2️⃣ Environment Setup
 ```bash
 cp .env.example .env
 php artisan key:generate
 ```
 
-### 3. Database Configuration
+### 3️⃣ Database Configuration
 Edit your `.env` file with your MySQL credentials:
 ```env
 DB_CONNECTION=mysql
@@ -85,9 +196,9 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-Make sure you have created the `laravel_tests` database in MySQL before running migrations.
+> 💡 **Tip:** Create the `laravel_tests` database in MySQL before running migrations.
 
-### 4. Email Configuration
+### 4️⃣ Email Configuration
 Configure email settings in `.env`:
 ```env
 MAIL_MAILER=smtp
@@ -100,101 +211,127 @@ MAIL_FROM_ADDRESS="noreply@yourdomain.com"
 MAIL_FROM_NAME="${APP_NAME}"
 ```
 
-### 5. Database Setup
+### 5️⃣ Database Setup
 ```bash
 php artisan migrate
 php artisan db:seed
 ```
 
-### 6. Build Assets
+### 6️⃣ Build Assets
 ```bash
 npm run dev
 # or for production
 npm run build
 ```
 
-### 7. Start Development Server
+### 7️⃣ Start Development Server
 ```bash
 php artisan serve
 ```
 
-Visit `http://127.0.0.1:8000` to see your blog!
-
-## � API Routes (For Testing)
-
-The application includes some test API routes for development purposes:
-
-### User API Endpoints
-- `GET /users` - Get all users
-- `GET /users/{id}` - Get specific user
-- `POST /users` - Create new user
-- `PUT /users/{id}` - Update user
-- `DELETE /users/{id}` - Delete user
-
-### Test Routes
-- `GET /test` - Simple test page
-- These routes are for development/testing and should be removed in production
-
-## 🌐 Application Routes
-
-### Public Routes
-- `GET /` - Homepage (welcome page)
-- `GET /posts` - Browse all published posts with search and filtering
-- `GET /posts/{slug}` - View individual post (accessible to guests for published posts)
-- `GET /categories` - View all categories
-- `GET /categories/{slug}` - View posts in specific category
-
-### Authentication Routes (Guest Only)
-- `GET /register` - Registration form
-- `POST /register` - Process registration
-- `GET /login` - Login form
-- `POST /login` - Process login
-- `GET /forgot-password` - Forgot password form
-- `POST /forgot-password` - Send reset link
-- `GET /reset-password/{token}` - Reset password form
-- `POST /reset-password` - Process password reset
-
-### Authenticated User Routes
-- `POST /logout` - Logout user
-- `GET /profile` - View profile
-- `PATCH /profile` - Update profile information
-- `PATCH /profile/password` - Update password
-- `GET /posts/create` - Create new post form
-- `POST /posts` - Store new post
-- `GET /posts/{post}/edit` - Edit post form
-- `PATCH /posts/{post}` - Update post
-- `DELETE /posts/{post}` - Delete post
-
-### Admin Only Routes
-- `GET /admin` - Admin dashboard
-- `GET /admin/posts/{post}/review` - Review post page
-- `PATCH /admin/posts/{post}/approve` - Approve post
-- `PATCH /admin/posts/{post}/reject` - Reject post
-- `GET /categories/create` - Create category form
-- `POST /categories` - Store new category
-- `GET /categories/{category}/edit` - Edit category form
-- `PATCH /categories/{category}` - Update category
-- `DELETE /categories/{category}` - Delete category
+🎉 **Success!** Visit `http://127.0.0.1:8000` to see your blog!
 
 ## 👤 Default Users
 
-The seeder creates these accounts for testing:
+> 🔑 **Test Accounts:** The seeder creates these accounts for immediate testing:
 
-### Admin User
-- **Email**: admin@example.com
-- **Password**: password
-- **Role**: Administrator
-- **Permissions**: Can approve/reject posts, manage categories, full admin access
+<table>
+<tr>
+<td align="center">
 
-### Regular User  
-- **Email**: user@example.com
-- **Password**: password
-- **Role**: User
-- **Permissions**: Can create posts (requires admin approval), manage own content
+### 👑 Admin User
+🔐 **Email:** `admin@example.com`<br>
+🔑 **Password:** `password`<br>
+🎭 **Role:** Administrator
 
-## 📖 Usage Guide
+**🛡️ Permissions:**
+- ✅ Approve/reject posts
+- 🏷️ Manage categories  
+- 📊 Full admin access
 
-### For Users
+</td>
+<td align="center">
+
+### 👤 Regular User
+🔐 **Email:** `user@example.com`<br>
+🔑 **Password:** `password`<br>
+🎭 **Role:** User
+
+**📝 Permissions:**
+- ✏️ Create posts (requires approval)
+- 📄 Manage own content
+- 👤 Update profile
+
+</td>
+</tr>
+</table>
+
+## 🌐 Application Routes
+
+<details>
+<summary><strong>🌍 Public Routes</strong> (No authentication required)</summary>
+
+| Method | Route | Description |
+|--------|-------|-------------|
+| `GET` | `/` | 🏠 Homepage (welcome page) |
+| `GET` | `/posts` | 📚 Browse all published posts with search/filtering |
+| `GET` | `/posts/{slug}` | 📖 View individual post |
+| `GET` | `/categories` | 🏷️ View all categories |
+| `GET` | `/categories/{slug}` | 📁 View posts in specific category |
+
+</details>
+
+<details>
+<summary><strong>🚪 Authentication Routes</strong> (Guest only)</summary>
+
+| Method | Route | Description |
+|--------|-------|-------------|
+| `GET` | `/register` | 📝 Registration form |
+| `POST` | `/register` | ✅ Process registration |
+| `GET` | `/login` | 🔐 Login form |
+| `POST` | `/login` | 🚪 Process login |
+| `GET` | `/forgot-password` | 🔑 Forgot password form |
+| `POST` | `/forgot-password` | 📧 Send reset link |
+| `GET` | `/reset-password/{token}` | 🔄 Reset password form |
+| `POST` | `/reset-password` | ✅ Process password reset |
+
+</details>
+
+<details>
+<summary><strong>👤 Authenticated User Routes</strong></summary>
+
+| Method | Route | Description |
+|--------|-------|-------------|
+| `POST` | `/logout` | 🚪 Logout user |
+| `GET` | `/profile` | 👤 View profile |
+| `PATCH` | `/profile` | ✏️ Update profile information |
+| `PATCH` | `/profile/password` | 🔑 Update password |
+| `GET` | `/posts/create` | ✏️ Create new post form |
+| `POST` | `/posts` | 💾 Store new post |
+| `GET` | `/posts/{post}/edit` | 📝 Edit post form |
+| `PATCH` | `/posts/{post}` | 🔄 Update post |
+| `DELETE` | `/posts/{post}` | 🗑️ Delete post |
+
+</details>
+
+<details>
+<summary><strong>👑 Admin Only Routes</strong></summary>
+
+| Method | Route | Description |
+|--------|-------|-------------|
+| `GET` | `/admin` | 📊 Admin dashboard |
+| `GET` | `/admin/posts/{post}/review` | 👀 Review post page |
+| `PATCH` | `/admin/posts/{post}/approve` | ✅ Approve post |
+| `PATCH` | `/admin/posts/{post}/reject` | ❌ Reject post |
+| `GET` | `/categories/create` | 🏷️ Create category form |
+| `POST` | `/categories` | 💾 Store new category |
+| `GET` | `/categories/{category}/edit` | ✏️ Edit category form |
+| `PATCH` | `/categories/{category}` | 🔄 Update category |
+| `DELETE` | `/categories/{category}` | 🗑️ Delete category |
+
+</details>
+
+##  Usage Guide
 
 ### For Users
 
@@ -235,38 +372,47 @@ The seeder creates these accounts for testing:
 
 ```
 app/
+├── helpers.php              # Custom utility functions (word_count, reading_time)
 ├── Http/
 │   ├── Controllers/          # Request handlers
 │   │   ├── AdminController.php      # Admin dashboard and post review
 │   │   ├── AuthController.php       # User registration and login
 │   │   ├── CategoryController.php   # Category management
-│   │   ├── DashboardController.php  # User dashboard
-│   │   ├── EmailVerificationController.php # Email verification (controller exists, routes not configured)
+│   │   ├── EmailVerificationController.php # Email verification (available but not routed)
 │   │   ├── PasswordResetController.php # Password reset functionality
 │   │   ├── PostController.php       # Post CRUD operations
 │   │   └── ProfileController.php    # User profile management
-│   ├── Requests/             # Form validation (if implemented)
-│   ├── Middleware/           # Custom middleware
-│   └── Policies/            # Authorization logic
-│       ├── PostPolicy.php          # Post access control
-│       ├── CategoryPolicy.php      # Category access control
-│       └── CommentPolicy.php       # Comment access control (policy exists, model is empty)
+│   ├── Requests/             # Form validation (available for custom validation)
+│   └── Middleware/           # Custom middleware
+├── Mail/                    # Email classes
+│   └── WelcomeEmail.php     # Welcome email for new users
 ├── Models/                  # Eloquent models
-│   ├── User.php            # User model with roles and profile fields
-│   ├── Post.php            # Post model with status workflow
+│   ├── User.php            # User model with roles, profile fields, and soft deletes
+│   ├── Post.php            # Post model with status workflow and scopes
 │   ├── Category.php        # Category model with slug support
-│   └── Comment.php         # Comment model (exists but empty)
-└── Providers/
-    ├── AppServiceProvider.php
-    └── AuthServiceProvider.php     # Policy registration
+│   └── Comment.php         # Comment model (structure exists, minimal implementation)
+├── Notifications/           # Laravel notifications
+│   ├── PostApprovedNotification.php  # Post approval emails
+│   └── PostRejectedNotification.php  # Post rejection emails
+├── Policies/               # Authorization logic
+│   ├── PostPolicy.php      # Post access control with guest/user/admin permissions
+│   ├── CategoryPolicy.php  # Category access control
+│   └── CommentPolicy.php   # Comment access control (minimal implementation)
+├── Providers/
+│   ├── AppServiceProvider.php
+│   └── AuthServiceProvider.php     # Policy registration
+└── Services/               # Business logic services (available for future use)
 
 database/
-├── database.sqlite         # SQLite file (not used in current config)
+├── database.sqlite         # SQLite file (used for testing)
 ├── migrations/             # Database schema
-│   ├── create_users_table.php
-│   ├── create_categories_table.php
-│   ├── create_posts_table.php
-│   └── add_profile_fields_to_users_table.php
+│   ├── 0001_01_01_000000_create_users_table.php
+│   ├── 0001_01_01_000001_create_cache_table.php
+│   ├── 0001_01_01_000002_create_jobs_table.php
+│   ├── 2025_09_09_192530_create_categories_table.php
+│   ├── 2025_09_09_192539_create_posts_table.php
+│   ├── 2025_09_10_211227_add_profile_fields_to_users_table.php
+│   └── 2025_09_11_192447_add_soft_deletes_to_users_table.php
 ├── factories/              # Model factories for testing
 │   ├── CategoryFactory.php
 │   ├── PostFactory.php
@@ -282,10 +428,11 @@ resources/
 │   ├── auth/             # Authentication pages
 │   ├── posts/            # Post-related views
 │   ├── categories/       # Category views
-│   ├── comments/         # Comment views (minimal implementation)
 │   ├── admin/            # Admin panel views
+│   ├── emails/           # Email templates
+│   │   └── welcome.blade.php  # Welcome email template
 │   ├── profile.blade.php # User profile page
-│   ├── test.blade.php    # Test page
+│   ├── test.blade.php    # Test page (available for development)
 │   └── welcome.blade.php # Homepage
 ├── css/                   # Stylesheets
 │   └── app.css           # Main Tailwind CSS file
@@ -294,184 +441,317 @@ resources/
     └── bootstrap.js      # Bootstrap configuration
 
 routes/
-└── web.php               # Application routes (grouped by middleware)
+└── web.php               # Application routes (organized by middleware groups)
 
-tests/
-├── Feature/              # Feature tests
-│   ├── ExampleTest.php
-│   └── RouteTest.php    # Route testing
-└── Unit/                # Unit tests
-    └── ExampleTest.php
+tests/                     # Main application tests
+├── Feature/              # Feature tests (organized by functionality)
+│   ├── Auth/            # Authentication feature tests
+│   ├── User/            # User functionality tests
+│   ├── Admin/           # Admin panel tests
+│   ├── Public/          # Public page tests
+│   └── ExampleTest.php  # Default Laravel test
+├── Unit/                # Unit tests
+│   ├── HelperTest.php   # Custom helper function tests
+│   └── ExampleTest.php  # Default unit test
+└── TestCase.php         # Base test class with custom helper methods
+
+public/tests/             # Educational tests (for YouTube tutorials)
+├── Feature/             # Pest PHP tutorial examples
+│   ├── ExamplePestTest.php    # Pest syntax demonstrations
+│   ├── RoutesTest.php         # Route testing examples
+│   ├── AdminTest.php          # Admin functionality examples
+│   ├── CreatePostTest.php     # Post creation tutorials
+│   ├── UpdatePostTest.php     # Post update tutorials
+│   ├── PostApprovedTest.php   # Approval workflow examples
+│   ├── DatabaseTest.php       # Database testing tutorials
+│   └── ViewsTest.php          # View testing examples
+├── Unit/                # Unit testing tutorials
+│   └── IsAdminTest.php  # Simple unit test example
+└── Pest.php            # Pest configuration for tutorials
+
+config/                  # Laravel configuration files
+├── app.php             # Application configuration
+├── auth.php            # Authentication configuration
+├── database.php        # Database configuration
+├── mail.php            # Email configuration
+└── ...                 # Other Laravel config files
+
+vendor/                  # Composer dependencies
+storage/                 # Application storage
+public/                  # Web-accessible files
+├── build/              # Compiled assets (Vite)
+└── storage             # Symbolic link to storage/app/public
 ```
 
-## 🔒 Security Features
+## 🔒 Security & Features
 
-- **CSRF Protection**: All forms protected against cross-site request forgery
-- **SQL Injection Prevention**: Eloquent ORM with prepared statements
-- **XSS Protection**: Blade template automatic escaping
-- **Authentication**: Secure bcrypt password hashing
-- **Authorization**: Policy-based access control for posts and categories
-- **Guest Access Control**: Unauthenticated users can only view published posts
-- **Role-based Permissions**: Separate admin and user capabilities
-- **File Upload Security**: Controlled image upload for posts
-
-## 🎯 Key Features Explained
-
-### Post Status Workflow
-1. **Draft**: Private posts saved by users, not visible to public
-2. **Pending**: Posts submitted for admin review
-3. **Approved**: Posts approved by admin, visible to public when published
-4. **Rejected**: Posts rejected by admin with review notes
-
-### User Roles & Permissions
-- **Admin Users**: 
-  - Can publish posts immediately without review
-  - Approve/reject pending posts
-  - Manage all categories
-  - Access admin dashboard
-- **Regular Users**:
-  - Create posts (requires admin approval)
-  - Edit own posts (may trigger re-approval)
-  - View own profile and update information
-  - Cannot access admin features
-
-### Guest Access
-- **Public Content**: Can view all published posts and categories
-- **Search & Filter**: Full access to content discovery features  
-- **No Account Required**: Browse without registration
-- **Registration Encouraged**: Create account to contribute content
-
-### Content Management
-- **SEO-friendly URLs**: Automatic slug generation with uniqueness check
-- **Rich Content**: Long-form text content support
-- **Featured Images**: Upload and display post images
-- **Category Organization**: Hierarchical content structure
-- **Search Functionality**: Full-text search across titles and content
+- **Authentication**: Secure login, password reset, email verification
+- **Authorization**: Role-based access control with policies
+- **Security**: CSRF/XSS protection, SQL injection prevention
+- **Post Workflow**: Draft → Pending → Approved/Rejected
+- **File Uploads**: Secure image handling with storage management
 
 ## 🔧 Customization
 
-### Adding New Fields to Posts
-1. Create migration: `php artisan make:migration add_field_to_posts_table`
-2. Update Post model `$fillable` array
-3. Create/update PostRequest validation rules  
-4. Modify create and edit Blade templates
+### Adding New Features
+- Create migrations for new database fields
+- Update model `$fillable` arrays
+- Add validation rules and form fields
+- Create/update Blade templates
+- Write tests for new functionality
 
-### Adding New User Profile Fields
-1. Create migration to add columns to users table
-2. Update User model `$fillable` array
-3. Update profile form and validation
-4. Modify profile Blade template
-
-### Styling Changes
-1. Edit `resources/css/app.css` for global styles
-2. Modify Tailwind classes in Blade templates
-3. Run `npm run dev` to rebuild assets
-4. Customize color scheme and typography
-
-### New Features
-1. Create controllers: `php artisan make:controller FeatureController`
-2. Define routes in `routes/web.php` with appropriate middleware
-3. Create corresponding Blade views
-4. Add authorization policies for access control
-5. Write feature tests for new functionality
+### Styling
+- Edit `resources/css/app.css` for global styles
+- Modify Tailwind classes in templates
+- Run `npm run dev` to rebuild assets
 
 ## 🚀 Production Deployment
 
-### Server Requirements
-- Linux server (Ubuntu/CentOS recommended)
-- Web server (Nginx recommended, Apache supported)
-- PHP 8.2+ with required extensions (mbstring, openssl, pdo, tokenizer, xml, ctype, json, bcmath)
-- SQLite 3+ or MySQL 5.7+/8.0+
-- Composer for dependency management
-- Node.js 18+ (for asset building)
+### Requirements
+- PHP 8.2+, MySQL 5.7+, Node.js 18+
+- Web server (Nginx/Apache)
 
-### Deployment Steps
-1. **Upload Files**: Clone repository to server
-   ```bash
-   git clone <repository-url> /var/www/laravel-blog
-   cd /var/www/laravel-blog
-   ```
+### Quick Deploy
+```bash
+# Clone and setup
+git clone https://github.com/Abdogoda/LARAVEL_TESTS.git /var/www/laravel-blog
+cd /var/www/laravel-blog
+composer install --optimize-autoloader --no-dev
+npm ci && npm run build
 
-2. **Install Dependencies**: 
-   ```bash
-   composer install --optimize-autoloader --no-dev
-   npm ci
-   ```
+# Configure environment
+cp .env.example .env
+php artisan key:generate
+# Edit .env with production settings
 
-3. **Environment Configuration**: 
-   ```bash
-   cp .env.example .env
-   php artisan key:generate
-   # Edit .env with production settings
-   ```
+# Database
+php artisan migrate --force
+php artisan db:seed --force
 
-4. **Database Setup**: 
-   ```bash
-   # Create MySQL database first
-   mysql -u root -p -e "CREATE DATABASE laravel_tests;"
-   php artisan migrate --force
-   php artisan db:seed --force
-   ```
-
-5. **Build Assets**: 
-   ```bash
-   npm run build
-   ```
-
-6. **File Permissions**: 
-   ```bash
-   chown -R www-data:www-data storage bootstrap/cache
-   chmod -R 755 storage bootstrap/cache
-   ```
-
-7. **Web Server Configuration**: Configure Nginx/Apache to point to `/public` directory
-
-8. **Enable Production Optimizations**:
-   ```bash
-   php artisan config:cache
-   php artisan route:cache  
-   php artisan view:cache
-   php artisan optimize
-   ```
-
-### Environment Variables for Production
-```env
-APP_ENV=production
-APP_DEBUG=false
-APP_URL=https://yourdomain.com
-
-DB_CONNECTION=mysql
-DB_DATABASE=laravel_tests  # or your production database name
-DB_USERNAME=your_db_user
-DB_PASSWORD=secure_password
-
-MAIL_MAILER=smtp
-MAIL_HOST=your-smtp-host
-MAIL_PORT=587
-MAIL_USERNAME=your-email
-MAIL_PASSWORD=your-email-password
-MAIL_ENCRYPTION=tls
-MAIL_FROM_ADDRESS=noreply@yourdomain.com
+# Optimize
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
 ```
 
-## 🧪 Testing
+## 🎓 Educational Testing Structure (YouTube Tutorial Series)
 
-### Running Tests
+This project includes a dedicated educational testing suite located in `public/tests/` that serves as practical examples for a Laravel testing tutorial series on YouTube. These tests are **separate from the main application tests** and are designed specifically for teaching Laravel testing concepts.
+
+### 📁 Educational Test Location
+```
+public/tests/              # ⚠️ Educational tests (NOT executed by php artisan test)
+├── Feature/              # Feature testing examples for tutorials
+├── Unit/                 # Unit testing examples for tutorials  
+└── Pest.php             # Pest PHP configuration for educational examples
+```
+
+### 🎯 Tutorial Test Topics Covered
+
+#### Pest PHP Testing Framework
+- **Modern Syntax**: Clean, expressive test writing
+- **Test Organization**: Proper structure and grouping
+- **Helper Functions**: Custom testing utilities
+- **Database Refreshing**: Test isolation techniques
+
+#### Practical Testing Examples
+- **Route Testing**: HTTP endpoint verification
+- **Authentication Testing**: Login/logout workflows
+- **Database Testing**: Model and data persistence
+- **Admin Features**: Role-based functionality testing
+- **Post Management**: CRUD operation testing
+- **View Testing**: Template rendering and content verification
+
+### 🚫 Important Note
+
+The tests in `public/tests/` are **educational examples only** and:
+- ❌ Are **NOT** executed when running `php artisan test`
+- ❌ Are **NOT** part of the production test suite
+- ✅ Are designed for **learning and demonstration purposes**
+- ✅ Show **different testing approaches and patterns**
+- ✅ Complement the main test suite in `tests/` directory
+
+### 🔄 Relationship Between Test Suites
+
+| Test Suite | Purpose | Execution | Location |
+|------------|---------|-----------|----------|
+| **Main Tests** | Production application testing | `php artisan test` | `tests/` |
+| **Educational Tests** | Tutorial examples & learning | Manual review only | `public/tests/` |
+
+### 📹 YouTube Tutorial Integration
+
+> 🎥 **Watch the Complete Tutorial Series:** [Laravel Testing Mastery Playlist](https://youtube.com/playlist?list=YOUR_PLAYLIST_ID)
+
+The educational tests serve as:
+1. **🎬 Live Coding Examples** - Real tests written during tutorials
+2. **💻 Practice Exercises** - Students can follow along step-by-step
+3. **📚 Reference Material** - Complete examples for different testing scenarios
+4. **📈 Progressive Learning** - Building from simple to complex testing concepts
+
+This dual-testing approach ensures:
+- 🏗️ **Production Code Quality** - Comprehensive test coverage for the actual application
+- 📚 **Educational Value** - Clear, focused examples for learning Laravel testing
+- 🔒 **Separation of Concerns** - Tutorial code doesn't interfere with production tests
+- 🎯 **Targeted Learning** - Each educational test demonstrates specific concepts
+
+This project includes an extensive testing suite with both **production-ready tests** and **educational examples** for learning Laravel testing concepts.
+
+### 🎯 Testing Structure
+
+```
+tests/                          # Main application tests (production)
+├── Feature/                   # Integration & HTTP tests
+│   ├── Auth/                 # Authentication feature tests
+│   │   ├── LoginTest.php     # Login functionality
+│   │   ├── RegisterTest.php  # User registration
+│   │   ├── LogoutTest.php    # Logout functionality
+│   │   ├── ForgotPasswordTest.php # Password reset
+│   │   ├── VerifyEmailTest.php    # Email verification
+│   │   ├── ProfilePageTest.php    # Profile page access
+│   │   ├── UpdateProfileTest.php  # Profile updates
+│   │   └── ChangePasswordTest.php # Password changes
+│   ├── User/                 # User-specific features
+│   │   ├── CreatePostTest.php    # Post creation
+│   │   ├── UpdatePostTest.php    # Post editing
+│   │   ├── DeletePostTest.php    # Post deletion
+│   │   └── ShowPostTest.php      # Post viewing
+│   ├── Admin/                # Admin panel features
+│   │   ├── DashboardPageTest.php # Admin dashboard
+│   │   └── ReviewPostTest.php    # Post review system
+│   ├── Public/               # Public-facing features
+│   │   ├── HomePageTest.php      # Homepage functionality
+│   │   ├── PostsPageTest.php     # Posts listing
+│   │   └── CategoriesPageTest.php # Category pages
+│   └── ExampleTest.php       # Basic framework test
+└── Unit/                     # Isolated unit tests
+    ├── HelperTest.php        # Custom helper functions
+    └── ExampleTest.php       # Basic unit test example
+
+public/tests/                  # Educational tests (for YouTube tutorials)
+├── Feature/                  # Pest PHP examples & tutorials
+│   ├── ExamplePestTest.php   # Pest syntax examples
+│   ├── RoutesTest.php        # Route testing examples
+│   ├── AdminTest.php         # Admin functionality examples
+│   ├── CreatePostTest.php    # Post creation tutorials
+│   ├── UpdatePostTest.php    # Post update tutorials
+│   ├── PostApprovedTest.php  # Approval workflow examples
+│   ├── DatabaseTest.php      # Database testing examples
+│   └── ViewsTest.php         # View testing examples
+├── Unit/                     # Unit testing tutorials
+│   └── IsAdminTest.php       # Simple unit test example
+└── Pest.php                  # Pest configuration for tutorials
+```
+
+### 🔬 Test Coverage Areas
+
+#### Authentication & Security Tests
+- **Registration**: Email validation, password requirements, duplicate prevention
+- **Login**: Credential validation, failed attempts, redirect behavior
+- **Password Reset**: Email sending, token validation, password updates
+- **Authorization**: Role-based access control, policy enforcement
+- **Profile Management**: Information updates, avatar uploads, validation
+
+#### Content Management Tests
+- **Post Creation**: Form validation, draft/publish workflow, category assignment
+- **Post Editing**: Owner verification, validation rules, status changes
+- **Post Viewing**: Public access, authenticated access, permission checks
+- **Admin Review**: Approval/rejection workflow, notification system
+- **Search & Filtering**: Query functionality, category filtering, sorting
+
+#### Database & Model Tests
+- **Relationships**: User-Post, Post-Category associations
+- **Scopes**: Published posts, pending posts, user-specific queries
+- **Validation**: Model-level validation, business rules
+- **Factory Usage**: Test data generation, realistic scenarios
+
+#### Helper Function Tests
+- **Word Count**: Text processing, HTML tag stripping
+- **Reading Time**: Calculation accuracy, custom reading speeds
+- **Slug Generation**: URL-friendly conversion, uniqueness
+
+### 🏃‍♂️ Running Tests
+
+#### Production Tests (Main Application)
 ```bash
 # Run all tests
 php artisan test
 
-# Run specific test suite
-php artisan test --testsuite=Feature
-
-# Run with coverage
+# Run with coverage report
 php artisan test --coverage
+
+# Run specific test suites
+php artisan test --testsuite=Feature
+php artisan test --testsuite=Unit
+
+# Run specific test files
+php artisan test tests/Feature/Auth/LoginTest.php
+php artisan test tests/Unit/HelperTest.php
+
+# Run with parallel execution (faster)
+php artisan test --parallel
+
+# Run with detailed output
+php artisan test --verbose
 ```
 
-### Test Structure
-- **Unit Tests**: Model and service testing
-- **Feature Tests**: HTTP request/response testing
-- **Browser Tests**: End-to-end user flows
+#### Educational Tests (Tutorial Examples)
+The tests in `public/tests/` are for educational purposes and demonstrate:
+- **Pest PHP Syntax**: Modern testing approach with cleaner syntax
+- **Testing Patterns**: Common Laravel testing scenarios
+- **Best Practices**: Proper test structure and organization
+
+```bash
+# These are NOT executed by default test runners
+# They're isolated examples for tutorial purposes
+# Located in: public/tests/
+```
+
+### 📊 Test Configuration
+
+#### PHPUnit Configuration (`phpunit.xml`)
+- **Test Database**: In-memory SQLite for speed
+- **Environment**: Isolated testing environment
+- **Coverage**: Application source code analysis
+- **Parallel Testing**: Support for concurrent test execution
+
+#### Pest PHP Configuration (`public/tests/Pest.php`)
+- **Modern Syntax**: Uses Pest's expressive testing style
+- **Helper Functions**: Custom test utilities
+- **Database Refresh**: Automatic database state management
+
+### 🎓 Testing Best Practices Demonstrated
+
+1. **Test Isolation**: Each test runs in a clean state
+2. **Factory Usage**: Realistic test data generation
+3. **HTTP Testing**: Complete request/response cycle testing
+4. **Database Testing**: Proper database state verification
+5. **Authentication Testing**: User session and permission testing
+6. **Policy Testing**: Authorization rule verification
+7. **Email Testing**: Mail sending and content verification
+8. **Form Validation**: Input validation and error handling
+
+### 🔧 Testing Utilities
+
+#### Custom Test Base Class
+```php
+// Tests/TestCase.php provides helper methods:
+$this->authenticate();          // Login as test user
+$this->authenticateAsAdmin();   // Login as admin user
+$this->createUser();           // Create test user
+$this->createPost();           // Create test post
+```
+
+#### Factory Definitions
+- **UserFactory**: Creates users with various roles and profiles
+- **PostFactory**: Generates posts with different statuses
+- **CategoryFactory**: Creates content categories
+
+This comprehensive testing framework ensures:
+- ✅ **Code Quality**: All features thoroughly tested
+- ✅ **Regression Prevention**: Changes don't break existing functionality  
+- ✅ **Documentation**: Tests serve as usage examples
+- ✅ **Learning Resource**: Educational examples for Laravel testing
+- ✅ **Confidence**: Safe refactoring and feature additions
 
 ## 🤝 Contributing
 
@@ -481,129 +761,67 @@ php artisan test --coverage
 4. Push to branch (`git push origin feature/amazing-feature`)
 5. Open Pull Request
 
-## 📄 License
+## 📞 Contact & Support
 
-This project is open-sourced software licensed under the [MIT license](LICENSE).
+<div align="center">
 
-## 🆘 Support
+### 👨‍💻 About the Developer
 
-### Common Issues
+**Abdogoda** - Laravel Developer & Content Creator
 
-**Database Connection Error**
-- Check `.env` database credentials
-- Ensure MySQL server is running
-- Verify the `laravel_tests` database exists in MySQL
-- Check MySQL user permissions
+</div>
 
-**Email Not Sending**
-- Configure MAIL settings in `.env`
-- Check firewall settings on server
-- Verify SMTP credentials with email provider
-- Test with `php artisan tinker` and Mail facade
+<table align="center">
+<tr>
+<td align="center">
 
-**Assets Not Loading**
-- Run `npm run dev` for development or `npm run build` for production
-- Check file permissions on `public/build` directory
-- Clear browser cache and check network tab
-- Verify Vite configuration in `vite.config.js`
+### 🌐 Connect with Me
 
-**403 Unauthorized Errors**
-- Check user roles in database (`users.role` column)
-- Verify policy authorization logic
-- Review middleware configuration
-- Check route permissions and authentication
+[![GitHub](https://img.shields.io/badge/GitHub-Abdogoda-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Abdogoda)
+[![YouTube](https://img.shields.io/badge/YouTube-Channel-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/@YourChannelName)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/your-profile)
+[![Twitter](https://img.shields.io/badge/Twitter-Follow-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/your-handle)
 
-**File Upload Issues**
-- Verify `storage/app/public` directory exists
-- Run `php artisan storage:link` to create symbolic link
-- Check file permissions on storage directories
-- Review upload limits in `php.ini` and server configuration
+</td>
+<td align="center">
 
-**Post Not Visible to Guests**
-- Ensure post status is 'approved'
-- Check `published_at` date is in the past
-- Verify PostPolicy allows guest access to published posts
-- Review route middleware configuration
+### 📧 Get in Touch
 
-### Getting Help
-- Check Laravel documentation
-- Review error logs in `storage/logs/`
-- Enable debug mode in development
-- Use Laravel's built-in debugging tools
+📧 **Email:** [your.email@example.com](mailto:your.email@example.com)  
+💼 **Business:** [business@example.com](mailto:business@example.com)  
+🌐 **Website:** [yourwebsite.com](https://yourwebsite.com)  
+📱 **Telegram:** [@YourTelegram](https://t.me/YourTelegram)  
+
+</td>
+</tr>
+</table>
+
+### 🎓 Educational Resources
+
+- 📺 **Complete Laravel Testing Course:** [Laravel Testing Mastery](https://youtube.com/playlist?list=YOUR_PLAYLIST_ID)
+- 🔥 **More Laravel Tutorials:** [Laravel Development Series](https://youtube.com/playlist?list=YOUR_LARAVEL_PLAYLIST)
+- 💡 **Tips & Tricks:** [Laravel Quick Tips](https://youtube.com/playlist?list=YOUR_TIPS_PLAYLIST)
+
+### 🆘 Support & Help
+
+- 🐛 **Found a bug?** [Open an Issue](https://github.com/Abdogoda/LARAVEL_TESTS/issues)
+- ❓ **Need help?** [Start a Discussion](https://github.com/Abdogoda/LARAVEL_TESTS/discussions)
+- 💡 **Feature request?** [Feature Request Template](https://github.com/Abdogoda/LARAVEL_TESTS/issues/new)
+- 📚 **Documentation:** Check the detailed sections above
+
+### ☕ Support the Project
+
+If this project helped you learn Laravel testing or saved you development time:
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Support-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/abdogoda)
+[![Sponsor](https://img.shields.io/badge/GitHub-Sponsor-EA4AAA?style=for-the-badge&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/Abdogoda)
 
 ---
 
-## 🌟 What's Included
+<div align="center">
 
-This blog management system includes everything needed for a production-ready content platform:
+*🌟 **Star this repository if you found it helpful!** 🌟*
 
-✅ **Complete Authentication System** (Registration, Login, Password Reset, Profile Management)  
-✅ **Content Management** (Posts with Images, Categories, Draft System)  
-✅ **Admin Review Workflow** (Pending/Approved/Rejected status system)  
-✅ **Role-based Access Control** (Admin and User roles with different permissions)  
-✅ **Guest Access** (Public viewing of published content without authentication)  
-✅ **Responsive Modern Design** (Tailwind CSS v4.1.13 with clean, professional layout)  
-✅ **Search and Filtering** (Full-text search, category filtering, sorting options)  
-✅ **SEO-friendly URLs** (Automatic slug generation with uniqueness)  
-✅ **File Upload System** (Featured images for posts with storage management)  
-✅ **Security Best Practices** (CSRF protection, XSS prevention, authorization policies)  
-✅ **Database Seeders** (Pre-configured admin and test users)  
-✅ **Comprehensive Testing** (Feature and unit tests included)  
-✅ **Production Ready** (Optimized for deployment with caching and performance features)  
+*Made with ❤️ by [Abdogoda](https://github.com/Abdogoda)*
 
-**Note**: Comment system structure exists but is not fully implemented (empty Comment model, CommentPolicy exists).
-
-Perfect for corporate blogs, news sites, content management platforms, or any application requiring user-generated content with administrative oversight!
-
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+</div>
