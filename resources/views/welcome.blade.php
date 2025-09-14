@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Welcome to BlogMaster Pro')
+@section('title', 'Welcome to Blog Master Pro')
 
 @section('content')
 <div class="relative min-h-screen overflow-hidden">
@@ -40,7 +40,7 @@
                         </div>
                         
                         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8  from-purple-400 via-cyan-400 to-pink-400 group-hover:scale-105 transition-transform duration-300">
-                            BlogMaster Pro
+                            Blog Master Pro
                         </h1>
                         
                         <p class="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
