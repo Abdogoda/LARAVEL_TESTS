@@ -21,15 +21,6 @@
 
 ---
 
-## 📸 Screenshots
-
-> **Note**: Add screenshots of your application here to showcase the UI and features.
-
-<!-- 
-![Homepage](screenshots/homepage.png)
-![Admin Dashboard](screenshots/admin-dashboard.png)
-![Post Creation](screenshots/post-creation.png)
--->
 
 ## 📋 Table of Contents
 
@@ -51,6 +42,16 @@
 - [Contributing](#-contributing)
 - [Contact & Support](#-contact--support)
 - [License](#-license)
+
+---
+
+## 📸 Screenshots
+
+<img width="1366" height="2266" alt="homepage" src="https://github.com/user-attachments/assets/3cbda8c8-39ab-4897-ac1c-afe81e338437" />
+<img width="1366" height="1591" alt="postspage" src="https://github.com/user-attachments/assets/fcced891-5e2f-4bde-a706-66a2958456ad" />
+<img width="1366" height="1947" alt="profilepage" src="https://github.com/user-attachments/assets/9250a245-8080-4a8d-bbef-6298bb0b1c7f" />
+<img width="1366" height="1250" alt="admindashboard" src="https://github.com/user-attachments/assets/fede6f0e-0572-41bc-9966-e8b80f18f35a" />
+
 
 ## ✨ Features
 
