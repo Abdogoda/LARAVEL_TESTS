@@ -4,11 +4,13 @@ namespace Tests\Browser;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Support\Sleep;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
 class ExampleTest extends DuskTestCase
 {
+    use DatabaseMigrations;
     public function testBasicExample(): void
     {
         $user = User::factory()->create();
