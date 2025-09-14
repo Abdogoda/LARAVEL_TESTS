@@ -1,19 +1,6 @@
 # 🚀 Laravel 12 Blog Management System
 
-<div align="center">
-
-![Laravel](https://img.shields.io/badge/Laravel-12-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-8.2+-777BB4?style=for-the-badge&logo=php&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.1.13-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
-![Tests](https://img.shields.io/badge/Tests-90%2B%20Cases-22C55E?style=for-the-badge&logo=checkmarx&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-F59E0B?style=for-the-badge&logo=opensourceinitiative&logoColor=white)
-
-[![YouTube Tutorial](https://img.shields.io/badge/📺_YouTube-Laravel_Testing_Tutorial-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/playlist?list=YOUR_PLAYLIST_ID)
-[![GitHub](https://img.shields.io/badge/⭐_GitHub-Abdogoda-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Abdogoda)
-
-</div>
-
-<p align="center">
+<p>
   <strong>A comprehensive blog application built with Laravel 12</strong><br>
   Featuring modern design, role-based authentication, content management, and extensive testing coverage.<br>
   <em>Both a production-ready platform and educational resource for Laravel development.</em>
@@ -581,7 +568,7 @@ The tests in `public/tests/` are **educational examples only** and:
 
 ### 📹 YouTube Tutorial Integration
 
-> 🎥 **Watch the Complete Tutorial Series:** [Laravel Testing Mastery Playlist](https://youtube.com/playlist?list=YOUR_PLAYLIST_ID)
+> 🎥 **Watch the Complete Tutorial Series:** [Laravel Testing Mastery Playlist](https://youtube.com/playlist?list=PLBy71Vfd0SzV-ba1I6udBdnl9lE0WB6w5&si=lUfHD5FmGCrTzg-9)
 
 The educational tests serve as:
 1. **🎬 Live Coding Examples** - Real tests written during tutorials
@@ -762,67 +749,7 @@ This comprehensive testing framework ensures:
 4. Push to branch (`git push origin feature/amazing-feature`)
 5. Open Pull Request
 
-## 📞 Contact & Support
+## 📧 Get in Touch
 
-<div align="center">
-
-### 👨‍💻 About the Developer
-
-**Abdogoda** - Laravel Developer & Content Creator
-
-</div>
-
-<table align="center">
-<tr>
-<td align="center">
-
-### 🌐 Connect with Me
-
-[![GitHub](https://img.shields.io/badge/GitHub-Abdogoda-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Abdogoda)
-[![YouTube](https://img.shields.io/badge/YouTube-Channel-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/@YourChannelName)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/your-profile)
-[![Twitter](https://img.shields.io/badge/Twitter-Follow-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/your-handle)
-
-</td>
-<td align="center">
-
-### 📧 Get in Touch
-
-📧 **Email:** [your.email@example.com](mailto:your.email@example.com)  
-💼 **Business:** [business@example.com](mailto:business@example.com)  
-🌐 **Website:** [yourwebsite.com](https://yourwebsite.com)  
-📱 **Telegram:** [@YourTelegram](https://t.me/YourTelegram)  
-
-</td>
-</tr>
-</table>
-
-### 🎓 Educational Resources
-
-- 📺 **Complete Laravel Testing Course:** [Laravel Testing Mastery](https://youtube.com/playlist?list=YOUR_PLAYLIST_ID)
-- 🔥 **More Laravel Tutorials:** [Laravel Development Series](https://youtube.com/playlist?list=YOUR_LARAVEL_PLAYLIST)
-- 💡 **Tips & Tricks:** [Laravel Quick Tips](https://youtube.com/playlist?list=YOUR_TIPS_PLAYLIST)
-
-### 🆘 Support & Help
-
-- 🐛 **Found a bug?** [Open an Issue](https://github.com/Abdogoda/LARAVEL_TESTS/issues)
-- ❓ **Need help?** [Start a Discussion](https://github.com/Abdogoda/LARAVEL_TESTS/discussions)
-- 💡 **Feature request?** [Feature Request Template](https://github.com/Abdogoda/LARAVEL_TESTS/issues/new)
-- 📚 **Documentation:** Check the detailed sections above
-
-### ☕ Support the Project
-
-If this project helped you learn Laravel testing or saved you development time:
-
-[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Support-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/abdogoda)
-[![Sponsor](https://img.shields.io/badge/GitHub-Sponsor-EA4AAA?style=for-the-badge&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/Abdogoda)
-
----
-
-<div align="center">
-
-*🌟 **Star this repository if you found it helpful!** 🌟*
-
-*Made with ❤️ by [Abdogoda](https://github.com/Abdogoda)*
-
-</div>
+📧 **Email:** [your.email@example.com](mailto:abdogoda0a@gmail.com)  
+🎥 **YouTube Channel:** [Abdulrhman-Goda](https://www.youtube.com/@Abdulrhman-Goda)  
