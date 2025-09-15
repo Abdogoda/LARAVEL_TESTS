@@ -113,6 +113,7 @@
 **🧪 Testing**
 - ✅ PHPUnit 11.5.3
 - 🐛 Pest PHP 3.8
+- 🤖 Laravel Dusk
 - 📊 90+ Test Cases
 - 🔄 CI/CD Ready
 
@@ -156,6 +157,7 @@
 | 🟢 **Node.js** | 18+ | Asset Building |
 | 🗄️ **MySQL** | 5.7+/8.0+ | Database |
 | 🌐 **Web Server** | Apache/Nginx | HTTP Server |
+| 🤖 **Chrome** | Latest | Browser Testing (Dusk) |
 
 ## ⚡ Quick Start
 
@@ -212,7 +214,17 @@ npm run dev
 npm run build
 ```
 
-### 7️⃣ Start Development Server
+### 7️⃣ Browser Testing Setup (Optional)
+```bash
+# Install Chrome/Chromium for Dusk tests
+# Download ChromeDriver or let Dusk manage it automatically
+php artisan dusk:chrome-driver
+
+# Run browser tests
+php artisan dusk
+```
+
+### 8️⃣ Start Development Server
 ```bash
 php artisan serve
 ```
@@ -438,6 +450,8 @@ tests/                     # Main application tests
 │   ├── Admin/           # Admin panel tests
 │   ├── Public/          # Public page tests
 │   └── ExampleTest.php  # Default Laravel test
+├── Browser/              # Laravel Dusk browser tests
+│   └── PostCreationAdminDashboardTest.php # E2E post workflow testing
 ├── Unit/                # Unit tests
 │   ├── HelperTest.php   # Custom helper function tests
 │   └── ExampleTest.php  # Default unit test
@@ -582,7 +596,57 @@ This dual-testing approach ensures:
 - 🔒 **Separation of Concerns** - Tutorial code doesn't interfere with production tests
 - 🎯 **Targeted Learning** - Each educational test demonstrates specific concepts
 
-This project includes an extensive testing suite with both **production-ready tests** and **educational examples** for learning Laravel testing concepts.
+## 🧪 Comprehensive Testing Framework
+
+This project includes an extensive testing suite with **production-ready tests**, **browser automation tests**, and **educational examples** for learning Laravel testing concepts.
+
+### 🎯 Testing Structure
+
+```
+tests/                          # Main application tests (production)
+├── Browser/                   # Laravel Dusk browser tests
+│   └── PostCreationAdminDashboardTest.php # E2E post creation workflow
+├── Feature/                   # Integration & HTTP tests
+│   ├── Auth/                 # Authentication feature tests
+│   │   ├── LoginTest.php     # Login functionality
+│   │   ├── RegisterTest.php  # User registration
+│   │   ├── LogoutTest.php    # Logout functionality
+│   │   ├── ForgotPasswordTest.php # Password reset
+│   │   ├── VerifyEmailTest.php    # Email verification
+│   │   ├── ProfilePageTest.php    # Profile page access
+│   │   ├── UpdateProfileTest.php  # Profile updates
+│   │   └── ChangePasswordTest.php # Password changes
+│   ├── User/                 # User-specific features
+│   │   ├── CreatePostTest.php    # Post creation
+│   │   ├── UpdatePostTest.php    # Post editing
+│   │   ├── DeletePostTest.php    # Post deletion
+│   │   └── ShowPostTest.php      # Post viewing
+│   ├── Admin/                # Admin panel features
+│   │   ├── DashboardPageTest.php # Admin dashboard
+│   │   └── ReviewPostTest.php    # Post review system
+│   ├── Public/               # Public-facing features
+│   │   ├── HomePageTest.php      # Homepage functionality
+│   │   ├── PostsPageTest.php     # Posts listing
+│   │   └── CategoriesPageTest.php # Category pages
+│   └── ExampleTest.php       # Basic framework test
+└── Unit/                     # Isolated unit tests
+    ├── HelperTest.php        # Custom helper functions
+    └── ExampleTest.php       # Basic unit test example
+
+public/tests/                  # Educational tests (for YouTube tutorials)
+├── Feature/                  # Pest PHP examples & tutorials
+│   ├── ExamplePestTest.php   # Pest syntax examples
+│   ├── RoutesTest.php        # Route testing examples
+│   ├── AdminTest.php         # Admin functionality examples
+│   ├── CreatePostTest.php    # Post creation tutorials
+│   ├── UpdatePostTest.php    # Post update tutorials
+│   ├── PostApprovedTest.php  # Approval workflow examples
+│   ├── DatabaseTest.php      # Database testing examples
+│   └── ViewsTest.php         # View testing examples
+├── Unit/                     # Unit testing tutorials
+│   └── IsAdminTest.php       # Simple unit test example
+└── Pest.php                  # Pest configuration for tutorials
+```
 
 ### 🎯 Testing Structure
 
@@ -632,6 +696,13 @@ public/tests/                  # Educational tests (for YouTube tutorials)
 
 ### 🔬 Test Coverage Areas
 
+#### Browser/End-to-End Tests (Laravel Dusk)
+- **Real Browser Testing**: Chrome automation for complete user workflows
+- **Multi-Browser Scenarios**: Simultaneous user and admin browser sessions
+- **Post Creation Workflow**: User creates post → Admin sees it immediately in dashboard
+- **Responsive Design Testing**: Mobile navigation menu interactions
+- **Visual Testing**: Screenshot capture for debugging and verification
+
 #### Authentication & Security Tests
 - **Registration**: Email validation, password requirements, duplicate prevention
 - **Login**: Credential validation, failed attempts, redirect behavior
@@ -661,8 +732,14 @@ public/tests/                  # Educational tests (for YouTube tutorials)
 
 #### Production Tests (Main Application)
 ```bash
-# Run all tests
+# Run all tests (Feature + Unit)
 php artisan test
+
+# Run browser tests (Laravel Dusk)
+php artisan dusk
+
+# Run specific browser test
+php artisan dusk --filter="test_user_created_post_appears_immediately_in_admin_dashboard"
 
 # Run with coverage report
 php artisan test --coverage
