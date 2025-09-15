@@ -29,8 +29,7 @@
 - [Production Deployment](#-production-deployment)
 - [What's Included](#-whats-included)
 - [Contributing](#-contributing)
-- [Contact & Support](#-contact--support)
-- [License](#-license)
+- [Contact & Support](#-get-in-touch)
 
 ---
 
