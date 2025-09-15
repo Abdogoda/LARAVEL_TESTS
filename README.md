@@ -1,4 +1,6 @@
-# 🚀 Laravel 12 Blog Management System
+# 🚀 Laravel 12 Blog Management System (Testing Toturial)
+
+<img width="1280" height="720" alt="Testing blog app" src="https://github.com/user-attachments/assets/158b47a1-3e11-4e5f-902b-951198efdc7a" />
 
 <p>
   <strong>A comprehensive blog application built with Laravel 12</strong><br>
